@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <th>Band</th>
+        <th>Song</th>
+        <th>Tabs</th>
+    </tr>
+    <tr *ngFor="let result of sortedResults">
+        <td>{{ result.artist.name }}</td>
+        <td>{{ result.title }}</td>
+        <td>{{ result.chordsPresent }}</td>
+    </tr>
+</table>
