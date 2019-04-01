@@ -13,7 +13,7 @@ export class FindArtistComponent implements OnInit {
   constructor(private artistsvc: TabService) { }
 
   ngOnInit() {
-    this.artistsvc.getArtist("Rammstein").subscribe((result) => {
+    this.artistsvc.getArtist("Trivium").subscribe((result) => {
       this.results = result;
       this.sortedResults = this.results.sort((n1) => {
         if (n1.chordsPresent == false) {

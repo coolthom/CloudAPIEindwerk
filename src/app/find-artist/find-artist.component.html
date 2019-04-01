@@ -1,21 +1,23 @@
-<h2>Find an artist</h2>
-<div>
+<div class="search">
     <span class="ui-float-label">
             <input id="float-input" type="text" size="30" pInputText> 
             <label for="float-input">Artist/Band</label>
     </span>
     <button pButton type="button" label="Search" style=""></button>
-    </div>
+</div>
+<h2>Find an artist</h2>
 <table>
     <tr>
         <th>Band</th>
         <th>Song</th>
-        <th>Tabs</th>
+        <th>Chords Present</th>
+        <th>Tabs Available</th>
     </tr>
     <tr *ngFor="let result of sortedResults">
         <td>{{ result.artist.name }}</td>
         <td>{{ result.title }}</td>
         <td>{{ result.chordsPresent }}</td>
+        <td>{{ result.tabTypes }}</td>
     </tr>
 </table>
 

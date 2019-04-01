@@ -3,12 +3,22 @@ table, th, td {
     border-collapse: collapse;
     text-align: center;
 }
+tr:nth-child(even) {
+    background-color:darkgray;
+}
+tr {
+    background-color: gray;
+}
+tr:first-child {
+    background-color: black;
+    color: white;
+}
 table {
     width: 80%;
-    margin-left: 10%;
     margin-top: 10px;
 }
-div {
+.search {
+    float: right;
     display: grid;
     grid-template-columns: auto auto;
     width: 350px;
