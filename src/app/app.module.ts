@@ -12,6 +12,11 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { TabService } from './tab.service';
 import { HttpClientModule } from '@angular/common/http';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ButtonModule} from 'primeng/button';
+import {DataViewModule} from 'primeng/dataview';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    DataViewModule
   ],
   providers: [TabService],
   bootstrap: [AppComponent]

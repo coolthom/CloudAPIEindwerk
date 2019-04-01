@@ -1,4 +1,4 @@
-<table>
+<!--<table>
     <tr>
         <th>Band</th>
         <th>Song</th>
@@ -9,4 +9,12 @@
         <td>{{ result.title }}</td>
         <td>{{ result.chordsPresent }}</td>
     </tr>
-</table>
+</table>-->
+
+<p-dataView [value]="Artist">
+        <ng-template let-car pTemplate="listItem">
+            <div>
+                {{results[0].id}}
+            </div>
+        </ng-template>
+    </p-dataView>
