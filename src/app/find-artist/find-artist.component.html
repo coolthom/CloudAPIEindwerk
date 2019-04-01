@@ -1,4 +1,12 @@
-<!--<table>
+<h2>Find an artist</h2>
+<div>
+    <span class="ui-float-label">
+            <input id="float-input" type="text" size="30" pInputText> 
+            <label for="float-input">Artist/Band</label>
+    </span>
+    <button pButton type="button" label="Search" style=""></button>
+    </div>
+<table>
     <tr>
         <th>Band</th>
         <th>Song</th>
@@ -9,12 +17,12 @@
         <td>{{ result.title }}</td>
         <td>{{ result.chordsPresent }}</td>
     </tr>
-</table>-->
+</table>
 
-<p-dataView [value]="Artist">
-        <ng-template let-car pTemplate="listItem">
+<!--<p-dataView [value]="sortedResults">
+        <ng-template let-generalArtist pTemplate="listItem">
             <div>
-                {{results[0].id}}
+                {{sortedResults.id}}
             </div>
         </ng-template>
-    </p-dataView>
+    </p-dataView>-->

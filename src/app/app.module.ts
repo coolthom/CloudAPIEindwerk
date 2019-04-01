@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
 import {DataViewModule} from 'primeng/dataview';
-
+import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import {DataViewModule} from 'primeng/dataview';
     HttpClientModule,
     BrowserAnimationsModule,
     ButtonModule,
-    DataViewModule
+    DataViewModule,
+    InputTextModule
   ],
   providers: [TabService],
   bootstrap: [AppComponent]

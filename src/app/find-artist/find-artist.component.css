@@ -8,3 +8,8 @@ table {
     margin-left: 10%;
     margin-top: 10px;
 }
+div {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 350px;
+}

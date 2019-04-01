@@ -26,7 +26,7 @@ export class FindArtistComponent implements OnInit {
     
         return 0;
     });
-      console.log(this.sortedResults);
+      //console.log(this.sortedResults);
     })
   }
 
