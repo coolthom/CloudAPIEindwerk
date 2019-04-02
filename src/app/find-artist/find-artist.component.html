@@ -1,22 +1,9 @@
-<div class="search">
-    <span class="ui-float-label">
-            <input id="float-input" type="text" size="30" pInputText> 
-            <label for="float-input">Artist/Band</label>
-    </span>
-    <button pButton type="button" label="Search"></button>
-</div>
-<h2>Find an artist</h2>
-<table>
-    <tr>
-        <th>Band</th>
-        <th>Song</th>
-        <th>Chords Present</th>
-        <th>Tabs Available</th>
-    </tr>
-    <tr *ngFor="let result of sortedResults">
-        <td> <a href="http://www.songsterr.com/a/wa/artist?id={{ result.artist.id }}">{{ result.artist.name }}</a></td>
-        <td> <a href="http://www.songsterr.com/a/wa/song?id={{ result.id }}">{{ result.title }}</a></td>
-        <td><img id="check" src=""></td>
-        <td>{{ result.tabTypes }}</td>
-    </tr>
-</table>
+<p-card [style]="{width: '350px'}" header="{{ reply.artist.name }}">
+    <img src="{{ reply.artist.image[4]['#text'] }}">
+    <p><strong *ngFor="let tag of reply.artist.tags.tag">- {{ tag.name }} </strong></p>
+    <br><p><strong>Listeners:</strong> {{ reply.artist.stats.listeners | number }}<br> 
+    <strong>Playcount:</strong> {{ reply.artist.stats.playcount | number }}</p>
+    <br>
+    <p>{{ reply.artist.bio.summary }}</p>
+    <a href="{{ this.aTag }}">Read more on last.fm</a>
+</p-card>

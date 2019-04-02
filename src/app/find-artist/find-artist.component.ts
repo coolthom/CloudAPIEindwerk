@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TabService, generalArtist, Artist } from '../tab.service';
+import { HttpClient } from '@angular/common/http';
+import { ArtistInfoService, Reply } from '../artist-info.service';
 
 @Component({
   selector: 'app-find-artist',
@@ -8,31 +10,20 @@ import { TabService, generalArtist, Artist } from '../tab.service';
 })
 export class FindArtistComponent implements OnInit {
 
-  results: Array<generalArtist>;
-  sortedResults: Array<generalArtist>;
-  sortOnChords: boolean;
-  constructor(private artistsvc: TabService) { 
-    this.sortOnChords = false;
+  reply: Reply;
+  aTag: string;
+  constructor(private artistService: ArtistInfoService) {
+
   }
 
   ngOnInit() {
-    this.artistsvc.getArtist("Tool").subscribe((result) => {
-      this.results = result;
-      if(this.sortOnChords){
-          this.sortedResults = this.results.sort((n1) => {
-            if (n1.chordsPresent == false) {
-                return 1;
-            }
-        
-            if (n1.chordsPresent == true) {
-                return -1;
-            }
-        
-            return 0;
-        });
-      } else this.sortedResults = this.results;
-      
-      //console.log(this.sortedResults);
+    this.artistService.getArtistInfo("Linkin Park").subscribe((result) => {
+      this.reply = result;
+      var placeholder = this.reply.artist.bio.summary.search("href=\".*\">.*</a>");
+      var holder = this.reply.artist.bio.summary.search("\">.*</a>");
+      this.aTag = this.reply.artist.bio.summary.substring(placeholder+6,holder)
+      this.reply.artist.bio.summary = this.reply.artist.bio.summary.substring(0, placeholder -4);
+      //console.log(this.reply.artist.bio.summary);
     })
   }
 

@@ -16,7 +16,7 @@ export class FindSongComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.artistsvc.getSong("Schism").subscribe((result) => {
+    this.artistsvc.getSong("All out life").subscribe((result) => {
       this.results = result;
       if(this.sortOnChords){
           this.sortedResults = this.results.sort((n1) => {

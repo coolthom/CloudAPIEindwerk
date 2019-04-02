@@ -1,0 +1,15 @@
+.firstGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 20px;
+}
+p {
+    background-color: gray;
+    padding: 20px;
+    border-radius: 10%;
+}
+h2 {
+    width: fit-content;
+    text-align: center;
+    background-color: red;
+}

@@ -18,6 +18,8 @@ import { DataViewModule } from 'primeng/dataview';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ArtistInfoService } from './artist-info.service';
+import { CardModule } from 'primeng/card';
+
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { ArtistInfoService } from './artist-info.service';
     ButtonModule,
     DataViewModule,
     InputTextModule,
-    CheckboxModule
+    CheckboxModule,
+    CardModule
   ],
   providers: [TabService, ArtistInfoService],
   bootstrap: [AppComponent]
