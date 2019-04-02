@@ -12,11 +12,12 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { TabService } from './tab.service';
 import { HttpClientModule } from '@angular/common/http';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ButtonModule} from 'primeng/button';
-import {DataViewModule} from 'primeng/dataview';
-import {InputTextModule} from 'primeng/inputtext';
-import {CheckboxModule} from 'primeng/checkbox';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonModule } from 'primeng/button';
+import { DataViewModule } from 'primeng/dataview';
+import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ArtistInfoService } from './artist-info.service';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import {CheckboxModule} from 'primeng/checkbox';
     InputTextModule,
     CheckboxModule
   ],
-  providers: [TabService],
+  providers: [TabService, ArtistInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

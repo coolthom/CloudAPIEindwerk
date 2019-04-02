@@ -1,3 +1,22 @@
-<p>
-  find-song works!
-</p>
+<div class="search">
+  <span class="ui-float-label">
+          <input id="float-input" type="text" size="30" pInputText> 
+          <label for="float-input">Song</label>
+  </span>
+  <button pButton type="button" label="Search"></button>
+</div>
+<h2>Find a song</h2>
+<table>
+  <tr>
+      <th>Band</th>
+      <th>Song</th>
+      <th>Chords Present</th>
+      <th>Tabs Available</th>
+  </tr>
+  <tr *ngFor="let result of sortedResults">
+      <td> <a href="http://www.songsterr.com/a/wa/artist?id={{ result.artist.id }}">{{ result.artist.name }}</a></td>
+      <td> <a href="http://www.songsterr.com/a/wa/song?id={{ result.id }}">{{ result.title }}</a></td>
+      <td><img id="check" src=""></td>
+      <td>{{ result.tabTypes }}</td>
+  </tr>
+</table>
