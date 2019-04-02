@@ -16,6 +16,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
 import {DataViewModule} from 'primeng/dataview';
 import {InputTextModule} from 'primeng/inputtext';
+import {CheckboxModule} from 'primeng/checkbox';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import {InputTextModule} from 'primeng/inputtext';
     BrowserAnimationsModule,
     ButtonModule,
     DataViewModule,
-    InputTextModule
+    InputTextModule,
+    CheckboxModule
   ],
   providers: [TabService],
   bootstrap: [AppComponent]

@@ -14,7 +14,7 @@ tr:first-child {
     color: white;
 }
 table {
-    width: 80%;
+    width: 100%;
     margin-top: 10px;
 }
 .search {
@@ -22,4 +22,10 @@ table {
     display: grid;
     grid-template-columns: auto auto;
     width: 350px;
+}
+a {
+    color: black;
+}
+a:hover {
+    color: red;
 }

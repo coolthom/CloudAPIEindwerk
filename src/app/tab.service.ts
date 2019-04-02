@@ -6,13 +6,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TabService {
 
-  URL: string;
+  artistURL: string;
+  songURL: string;
   constructor(private http: HttpClient) {
-    this.URL = "http://www.songsterr.com/a/ra/songs/byartists.json?artists=";
-
+    this.artistURL = "http://www.songsterr.com/a/ra/songs/byartists.json?artists=";
+    this.songURL = "https://www.songsterr.com/a/ra/songs.json?pattern=";
    }
    getArtist(artist: string){
-     return this.http.get<Array<generalArtist>>(this.URL + artist);
+     return this.http.get<Array<generalArtist>>(this.artistURL + artist);
+   }
+   getSong(songName: string){
+    return this.http.get<Array<generalArtist>>(this.songURL + songName);
    }
 }
 export interface Artist {

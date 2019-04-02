@@ -3,7 +3,7 @@
             <input id="float-input" type="text" size="30" pInputText> 
             <label for="float-input">Artist/Band</label>
     </span>
-    <button pButton type="button" label="Search" style=""></button>
+    <button pButton type="button" label="Search"></button>
 </div>
 <h2>Find an artist</h2>
 <table>
@@ -14,17 +14,9 @@
         <th>Tabs Available</th>
     </tr>
     <tr *ngFor="let result of sortedResults">
-        <td>{{ result.artist.name }}</td>
-        <td>{{ result.title }}</td>
-        <td>{{ result.chordsPresent }}</td>
+        <td> <a href="http://www.songsterr.com/a/wa/artist?id={{ result.artist.id }}">{{ result.artist.name }}</a></td>
+        <td> <a href="http://www.songsterr.com/a/wa/song?id={{ result.id }}">{{ result.title }}</a></td>
+        <td><img id="check" src=""></td>
         <td>{{ result.tabTypes }}</td>
     </tr>
 </table>
-
-<!--<p-dataView [value]="sortedResults">
-        <ng-template let-generalArtist pTemplate="listItem">
-            <div>
-                {{sortedResults.id}}
-            </div>
-        </ng-template>
-    </p-dataView>-->
