@@ -1,9 +1,9 @@
 <div class="search">
   <span class="ui-float-label">
-          <input id="float-input" type="text" size="30" pInputText> 
+          <input #songBox id="float-input" type="text" size="30" (keydown.enter)="getSong()" pInputText> 
           <label for="float-input">Song</label>
   </span>
-  <button pButton type="button" label="Search"></button>
+  <button pButton (click)="getSong()" type="button" label="Search"></button>
 </div>
 <h2>Find a song</h2>
 <table>

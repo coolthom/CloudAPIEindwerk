@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { TabService, generalArtist } from '../tab.service';
 
 @Component({
@@ -8,15 +8,19 @@ import { TabService, generalArtist } from '../tab.service';
 })
 export class FindSongComponent implements OnInit {
 
+  @ViewChild('songBox') songBox: ElementRef;
+
   results: Array<generalArtist>;
   sortedResults: Array<generalArtist>;
   sortOnChords: boolean;
   constructor(private artistsvc: TabService) { 
     this.sortOnChords = false;
   }
-
   ngOnInit() {
-    this.artistsvc.getSong("All out life").subscribe((result) => {
+    this.searchSong();
+  }
+  searchSong(requestedSong: string = "song"){
+    this.artistsvc.getSong(requestedSong).subscribe((result) => {
       this.results = result;
       if(this.sortOnChords){
           this.sortedResults = this.results.sort((n1) => {
@@ -31,9 +35,10 @@ export class FindSongComponent implements OnInit {
             return 0;
         });
       } else this.sortedResults = this.results.sort();
-      
       //console.log(this.sortedResults);
     })
   }
-
+  getSong(){
+    this.searchSong(this.songBox.nativeElement.value);
+  }
 }

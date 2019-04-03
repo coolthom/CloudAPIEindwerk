@@ -1,9 +1,31 @@
-<p-card [style]="{width: '350px'}" header="{{ reply.artist.name }}">
-    <img src="{{ reply.artist.image[4]['#text'] }}">
-    <p><strong *ngFor="let tag of reply.artist.tags.tag">- {{ tag.name }} </strong></p>
-    <br><p><strong>Listeners:</strong> {{ reply.artist.stats.listeners | number }}<br> 
-    <strong>Playcount:</strong> {{ reply.artist.stats.playcount | number }}</p>
-    <br>
-    <p>{{ reply.artist.bio.summary }}</p>
-    <a href="{{ this.aTag }}">Read more on last.fm</a>
-</p-card>
+<div class="wrapper">
+    <div class="similar">
+        <h2 class="title">Similar artists</h2>
+        <p-card *ngFor="let artist of reply.artist.similar.artist">
+                <img src="{{ artist.image[2]['#text'] }}">
+                <h3>{{ artist.name }}</h3>
+        </p-card>
+    </div>
+    <div>
+        <h2>Artist</h2>
+        <p-card [style]="{width: '350px'}">
+            <p-header>
+                <img src="{{ reply.artist.image[4]['#text'] }}">
+                <h3>{{ reply.artist.name }}</h3>
+            </p-header>
+            <p><strong *ngFor="let tag of reply.artist.tags.tag">- {{ tag.name }} </strong></p>
+            <br><p><strong>Listeners:</strong> {{ reply.artist.stats.listeners | number }}<br> 
+            <strong>Playcount:</strong> {{ reply.artist.stats.playcount | number }}</p>
+            <br>
+            <p>{{ reply.artist.bio.summary }}</p>
+            <a href="{{ this.aTag }}">Read more on last.fm</a>
+        </p-card>
+    </div>  
+    <div class="search">
+            <span class="ui-float-label">
+                    <input #artistBox id="float-input" type="text" size="30" (keydown.enter)="getArtist()" pInputText> 
+                    <label for="float-input">Artist</label>
+            </span>
+            <button pButton (click)="getArtist()" type="button" label="Search"></button>
+    </div>
+</div>
