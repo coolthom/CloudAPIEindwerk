@@ -19,7 +19,8 @@ export class FindSongComponent implements OnInit {
   ngOnInit() {
     this.searchSong();
   }
-  searchSong(requestedSong: string = "song"){
+  //API Search list + filter
+  searchSong(requestedSong: string = "Black dog"){
     this.artistsvc.getSong(requestedSong).subscribe((result) => {
       this.results = result;
       if(this.sortOnChords){

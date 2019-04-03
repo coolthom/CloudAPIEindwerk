@@ -10,17 +10,18 @@ export class ArtistInfoService {
   sharedKeyLastfm: string;
 
   artistURL: string;
-  artistURL2: string;
+  jsonURL: string;
 
   constructor(private http: HttpClient) {
     this.secretKeyLastfm = "1282a613cef5c8582acf66feb257a764";
     this.sharedKeyLastfm = "6fa7a286142c9fa74e1961d85a3b2fb3";
+    //Language filter search
     this.artistURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=";
-    this.artistURL2 = "&api_key=" + this.secretKeyLastfm + "&format=json";
+    this.jsonURL = "&api_key=" + this.secretKeyLastfm + "&format=json&lang=en";
     
    }
    getArtistInfo(artist: string){
-    return this.http.get<Reply>(this.artistURL + artist + this.artistURL2);
+    return this.http.get<Reply>(this.artistURL + artist + this.jsonURL);
    }
 }
 

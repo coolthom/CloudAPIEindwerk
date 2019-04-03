@@ -10,13 +10,12 @@
   <tr>
       <th>Band</th>
       <th>Song</th>
-      <th>Chords Present</th>
       <th>Tabs Available</th>
   </tr>
   <tr *ngFor="let result of sortedResults">
+      <!--API use ID-->
       <td> <a href="http://www.songsterr.com/a/wa/artist?id={{ result.artist.id }}">{{ result.artist.name }}</a></td>
       <td> <a href="http://www.songsterr.com/a/wa/song?id={{ result.id }}">{{ result.title }}</a></td>
-      <td><img id="check" src=""></td>
       <td>{{ result.tabTypes }}</td>
   </tr>
 </table>

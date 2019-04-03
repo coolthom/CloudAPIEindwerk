@@ -22,7 +22,7 @@ export class FindArtistComponent implements OnInit {
   getArtist(){
     this.searchArtist(this.artistBox.nativeElement.value)
   }
-  searchArtist(requestedArtist: string = "Metallica"){
+  searchArtist(requestedArtist: string = "Led Zeppelin"){
     this.artistService.getArtistInfo(requestedArtist).subscribe((result) => {
       this.reply = result;
       var placeholder = this.reply.artist.bio.summary.search("href=\".*\">.*</a>");
