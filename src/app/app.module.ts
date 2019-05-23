@@ -19,6 +19,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ArtistInfoService } from './artist-info.service';
 import { CardModule } from 'primeng/card';
+import { FindGuitarComponent } from './find-guitar/find-guitar.component';
 
 
 
@@ -30,7 +31,8 @@ import { CardModule } from 'primeng/card';
     NavComponent,
     FooterComponent,
     HeaderComponent,
-    HomepageComponent
+    HomepageComponent,
+    FindGuitarComponent
   ],
   imports: [
     BrowserModule,
