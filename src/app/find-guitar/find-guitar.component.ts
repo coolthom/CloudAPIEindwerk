@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GuitarService, Guitar } from '../guitar.service';
 
 @Component({
   selector: 'app-find-guitar',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FindGuitarComponent implements OnInit {
 
-  constructor() { }
+  result: Array<Guitar>;
+
+  constructor(private guitarsvc: GuitarService) { }
 
   ngOnInit() {
+    this.searchGuitar(99)
+  }
+
+  searchGuitar(page: number = 0){
+    this.guitarsvc.getAllGuitars(page).subscribe((result) => {
+      this.result = result;
+      console.log(this.result)
+    })
   }
 
 }

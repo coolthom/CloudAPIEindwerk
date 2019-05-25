@@ -8,7 +8,6 @@ import { FindArtistComponent } from './find-artist/find-artist.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { HomepageComponent } from './homepage/homepage.component';
 import { TabService } from './tab.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -20,6 +19,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { ArtistInfoService } from './artist-info.service';
 import { CardModule } from 'primeng/card';
 import { FindGuitarComponent } from './find-guitar/find-guitar.component';
+import { GuitarService } from './guitar.service';
 
 
 
@@ -31,7 +31,6 @@ import { FindGuitarComponent } from './find-guitar/find-guitar.component';
     NavComponent,
     FooterComponent,
     HeaderComponent,
-    HomepageComponent,
     FindGuitarComponent
   ],
   imports: [
@@ -45,7 +44,7 @@ import { FindGuitarComponent } from './find-guitar/find-guitar.component';
     CheckboxModule,
     CardModule
   ],
-  providers: [TabService, ArtistInfoService],
+  providers: [TabService, ArtistInfoService, GuitarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

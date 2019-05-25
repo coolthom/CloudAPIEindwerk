@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,44 +18,50 @@ namespace CAEindwerk.Controllers
             _context = ctxt;
         }
 
-        [HttpGet]
-        public List<Guitar> GetGuitars(string name, int? page, string sort, string dir = "asc", int length = 2)
+    [HttpGet]
+    public List<Guitar> GetGuitars(string name, int? page, string sort, string dir = "asc", int length = 2)
+    {
+      IQueryable<Guitar> query = _context.Guitars;
+
+      if (!string.IsNullOrWhiteSpace(name))
+        query = query.Where(d => d.Name == name);
+
+      if (!string.IsNullOrWhiteSpace(sort))
+      {
+        switch (sort)
         {
-            IQueryable<Guitar> query = _context.Guitars;
+          case "name":
+            if (dir == "asc")
+              query = query.OrderBy(d => d.Name);
+            else if (dir == "desc")
+              query = query.OrderByDescending(d => d.Name);
+            break;
+          case "buildYear":
+            if (dir == "asc")
+              query = query.OrderBy(d => d.BuildYear);
+            else if (dir == "desc")
+              query = query.OrderByDescending(d => d.BuildYear);
+            break;
+          case "purchaseYear":
+            if (dir == "asc")
+              query = query.OrderBy(d => d.PurchaseYear);
+            else if (dir == "desc")
+              query = query.OrderByDescending(d => d.PurchaseYear);
+            break;
+        }
+      }
 
-            if (!string.IsNullOrWhiteSpace(name))
-                query = query.Where(d => d.Name == name);
+      if (page.HasValue)
+      {
+        if (page == 99)
+          length = 99;
+        else
+          query = query.Skip(page.Value * length);
 
-            if (!string.IsNullOrWhiteSpace(sort))
-            {
-                switch (sort)
-                {
-                    case "name":
-                        if (dir == "asc")
-                            query = query.OrderBy(d => d.Name);
-                        else if (dir == "desc")
-                            query = query.OrderByDescending(d => d.Name);
-                        break;
-                    case "buildYear":
-                        if (dir == "asc")
-                            query = query.OrderBy(d => d.BuildYear);
-                        else if (dir == "desc")
-                            query = query.OrderByDescending(d => d.BuildYear);
-                        break;
-                    case "purchaseYear":
-                        if (dir == "asc")
-                            query = query.OrderBy(d => d.PurchaseYear);
-                        else if (dir == "desc")
-                            query = query.OrderByDescending(d => d.PurchaseYear);
-                        break;
-                }
-            }
+      }
+      query = query.Take(length);
 
-            if (page.HasValue)
-                query = query.Skip(page.Value * length);
-            query = query.Take(length);
-
-            return query.ToList();
+      return query.ToList();
         }
 
         [Route("{id}")]

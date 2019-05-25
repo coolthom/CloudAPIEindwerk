@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -43,14 +43,20 @@ namespace CAEindwerk
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
+                
+      }
             else
             {
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            app.UseCors(builder =>
+                            builder.AllowAnyOrigin()
+                                   .AllowAnyMethod()
+                                   .AllowAnyHeader());
             DBInitializer.Initialize(context);
             app.UseMvc();
-        }
+    }
+    
     }
 }

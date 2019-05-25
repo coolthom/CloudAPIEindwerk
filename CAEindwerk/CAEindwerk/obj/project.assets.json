@@ -12534,23 +12534,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\claes\\.nuget\\packages\\": {},
+    "C:\\Users\\Thomas\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\claes\\Desktop\\CloudAPIEindwerk\\CAEindwerk\\CAEindwerk\\CAEindwerk.csproj",
+      "projectUniqueName": "C:\\Users\\Thomas\\Desktop\\CloudAPIEindwerk\\CAEindwerk\\CAEindwerk\\CAEindwerk.csproj",
       "projectName": "CAEindwerk",
-      "projectPath": "C:\\Users\\claes\\Desktop\\CloudAPIEindwerk\\CAEindwerk\\CAEindwerk\\CAEindwerk.csproj",
-      "packagesPath": "C:\\Users\\claes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\claes\\Desktop\\CloudAPIEindwerk\\CAEindwerk\\CAEindwerk\\obj\\",
+      "projectPath": "C:\\Users\\Thomas\\Desktop\\CloudAPIEindwerk\\CAEindwerk\\CAEindwerk\\CAEindwerk.csproj",
+      "packagesPath": "C:\\Users\\Thomas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Thomas\\Desktop\\CloudAPIEindwerk\\CAEindwerk\\CAEindwerk\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\claes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Thomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

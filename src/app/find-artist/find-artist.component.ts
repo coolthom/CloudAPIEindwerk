@@ -29,7 +29,7 @@ export class FindArtistComponent implements OnInit {
       var holder = this.reply.artist.bio.summary.search("\">.*</a>");
       this.aTag = this.reply.artist.bio.summary.substring(placeholder+6,holder)
       this.reply.artist.bio.summary = this.reply.artist.bio.summary.substring(0, placeholder -4);
-      console.log(this.reply.artist.similar.artist);
+      //console.log(this.reply.artist.similar.artist);
     })
   }
 }

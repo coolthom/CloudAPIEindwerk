@@ -8,9 +8,9 @@ export class GuitarService {
   APIURL: string;
 
   constructor(private http: HttpClient) {
-    this.APIURL = "";
+    this.APIURL = "https://localhost:44330/api/guitars";
    }
-   getAllGuitars(page: number = null){
+   getAllGuitars(page: number){
     return this.http.get<Array<Guitar>>(this.APIURL + "?page=" + page);
    }
    getSpecificGuitar(name: string){
