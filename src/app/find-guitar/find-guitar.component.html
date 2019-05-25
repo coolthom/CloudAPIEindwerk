@@ -1,12 +1,25 @@
-<h2>Guitar</h2>
-<div class="container">
-    <p-card class="item" *ngFor="let result of result" [style]="{width: '350px'}">
-        <p-header>
-            <img style="width: 300px; height: 300px" src="{{ result.image }}">
-            <h3>{{ result.name }}</h3>
-        </p-header>
-        <p><strong>ID: </strong>{{ result.id }}
-        <br><strong>Build year:</strong> {{ result.buildYear }}<br> 
-        <strong>Year of purchase:</strong> {{ result.purchaseYear }}</p>
-    </p-card>
+<div class="buttonInterface">
+    <div class="search">
+        <span class="ui-float-label search">
+                <input #guitarBox id="float-input" type="text" size="30" (keydown.enter)="searchSpecificGuitar()" pInputText> 
+                <label for="float-input">Guitar</label>
+        </span>
+        <button pButton (click)="searchSpecificGuitar()" type="button" label="Search"></button>
+    </div>
+  <div><button pButton type="button" label="Show all guitars" (click)="searchGuitar(99)"></button></div>
+  <div><button pButton type="button" label="Post a new guitar" (click)="searchGuitar(99)"></button></div>
+</div>
+<div *ngIf="visible">
+  <h2 style="text-align: center">Guitars</h2>
+  <div class="container">
+      <p-card class="item" *ngFor="let result of result" [style]="{width: '350px'}">
+          <p-header>
+              <img style="width: 300px; height: 300px" src="{{ result.image }}">
+              <h3>{{ result.name }}</h3>
+          </p-header>
+          <p><strong>ID: </strong>{{ result.id }}
+          <br><strong>Build year:</strong> {{ result.buildYear }}<br> 
+          <strong>Year of purchase:</strong> {{ result.purchaseYear }}</p>
+      </p-card>
+  </div>
 </div>  

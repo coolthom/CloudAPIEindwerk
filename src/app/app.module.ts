@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { FindSongComponent } from './find-song/find-song.component';
 import { FindArtistComponent } from './find-artist/find-artist.component';
 import { NavComponent } from './nav/nav.component';
-import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { TabService } from './tab.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,7 +28,6 @@ import { GuitarService } from './guitar.service';
     FindSongComponent,
     FindArtistComponent,
     NavComponent,
-    FooterComponent,
     HeaderComponent,
     FindGuitarComponent
   ],

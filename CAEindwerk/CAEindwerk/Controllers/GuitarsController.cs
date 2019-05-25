@@ -24,7 +24,7 @@ namespace CAEindwerk.Controllers
       IQueryable<Guitar> query = _context.Guitars;
 
       if (!string.IsNullOrWhiteSpace(name))
-        query = query.Where(d => d.Name == name);
+        query = query.Where(d => d.Name.Contains(name));
 
       if (!string.IsNullOrWhiteSpace(sort))
       {
