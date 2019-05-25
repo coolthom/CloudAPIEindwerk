@@ -20,3 +20,8 @@ button {
     margin-left: 3px;
     margin-right: 2px;
 }
+.form {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
+}

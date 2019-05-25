@@ -7,9 +7,9 @@
         <button pButton (click)="searchSpecificGuitar()" type="button" label="Search"></button>
     </div>
   <div><button pButton type="button" label="Show all guitars" (click)="searchGuitar(99)"></button></div>
-  <div><button pButton type="button" label="Post a new guitar" (click)="searchGuitar(99)"></button></div>
+  <div><button pButton type="button" label="Post a new guitar" (click)="showForm()"></button></div>
 </div>
-<div *ngIf="visible">
+<div *ngIf="listVisible">
   <h2 style="text-align: center">Guitars</h2>
   <div class="container">
       <p-card class="item" *ngFor="let result of result" [style]="{width: '350px'}">
@@ -22,4 +22,38 @@
           <strong>Year of purchase:</strong> {{ result.purchaseYear }}</p>
       </p-card>
   </div>
-</div>  
+</div>
+<div *ngIf="formVisible">
+  <h3 style="text-align: center" class="first">New Guitar</h3>
+    <div class="ui-g ui-fluid form">
+      <div class="ui-g-12 ui-md-4">
+          <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"><i><fa-icon icon="signature"></fa-icon></i></span>
+              <input type="text" pInputText placeholder="Name">         
+          </div>
+      </div>
+      
+      <div class="ui-g-12 ui-md-4">
+          <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"><i><fa-icon icon="calendar"></fa-icon></i></span>
+              <input type="text" pInputText placeholder="Build Year">   
+          </div>
+      </div>
+      
+      <div class="ui-g-12 ui-md-4">
+          <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"><i><fa-icon icon="image"></fa-icon></i></span>
+              <input type="text" pInputText placeholder="Image link">      
+          </div>
+      </div>
+      
+      <div class="ui-g-12 ui-md-4">
+          <div class="ui-inputgroup">
+              <span class="ui-inputgroup-addon"><i><fa-icon icon="calendar"></fa-icon></i></span>
+              <input type="text" pInputText placeholder="Year of Purchase">      
+          </div>
+      </div>
+      
+  </div>
+  <button pButton (click)="submitForm()" type="button" label="Submit"></button>
+</div>

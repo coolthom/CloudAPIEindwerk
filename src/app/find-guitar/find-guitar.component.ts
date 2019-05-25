@@ -11,28 +11,33 @@ export class FindGuitarComponent implements OnInit {
   @ViewChild('guitars') guitars: ElementRef;
 
   result: Array<Guitar>;
-  visible: boolean;
+  listVisible: boolean;
+  formVisible: boolean;
 
   constructor(private guitarsvc: GuitarService) {
-    this.visible = false;
+    this.listVisible = false;
    }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() { }
 
   searchGuitar(page: number = 0){
-    this.visible = true;
+    this.formVisible = false;
+    this.listVisible = true;
     this.guitarsvc.getAllGuitars(page).subscribe((result) => {
       this.result = result;
       //console.log(this.result)
     })
   }
   searchSpecificGuitar(){
-    this.visible = true;
+    this.formVisible = false;
+    this.listVisible = true;
     this.guitarsvc.getSpecificGuitar(this.guitarBox.nativeElement.value.replace(" ", "%20")).subscribe((result) => {
       this.result = result;
       //console.log(this.result)
     })
+  }
+  showForm(){
+    this.listVisible = false;
+    this.formVisible = true;
   }
 }

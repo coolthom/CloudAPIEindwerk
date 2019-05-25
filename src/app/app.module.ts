@@ -19,6 +19,11 @@ import { ArtistInfoService } from './artist-info.service';
 import { CardModule } from 'primeng/card';
 import { FindGuitarComponent } from './find-guitar/find-guitar.component';
 import { GuitarService } from './guitar.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; 
+import { library } from '@fortawesome/fontawesome-svg-core'; 
+import { fas } from '@fortawesome/free-solid-svg-icons'; 
+library.add(fas);
+
 
 
 
@@ -40,7 +45,8 @@ import { GuitarService } from './guitar.service';
     DataViewModule,
     InputTextModule,
     CheckboxModule,
-    CardModule
+    CardModule,
+    FontAwesomeModule
   ],
   providers: [TabService, ArtistInfoService, GuitarService],
   bootstrap: [AppComponent]
