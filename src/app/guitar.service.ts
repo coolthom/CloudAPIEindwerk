@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +17,16 @@ export class GuitarService {
    getSpecificGuitar(name: string){
      return this.http.get<Array<Guitar>>(this.APIURL + "?name=" + name);
    }
-   sortAllGuitars(){
-
+   postGuitar(guitar: Guitar): Observable<Guitar>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+        //'Authorization': 'my-auth-token'
+      })}
+    return this.http.post<Guitar>(this.APIURL, guitar, httpOptions)
    }
 }
-export interface Guitar {
+export class Guitar {
   id: number;
   name: string;
   buildYear: number;

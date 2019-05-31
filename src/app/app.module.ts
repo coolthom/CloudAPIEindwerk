@@ -22,6 +22,7 @@ import { GuitarService } from './guitar.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; 
 import { library } from '@fortawesome/fontawesome-svg-core'; 
 import { fas } from '@fortawesome/free-solid-svg-icons'; 
+import { FormsModule } from '@angular/forms';
 library.add(fas);
 
 
@@ -46,7 +47,8 @@ library.add(fas);
     InputTextModule,
     CheckboxModule,
     CardModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [TabService, ArtistInfoService, GuitarService],
   bootstrap: [AppComponent]

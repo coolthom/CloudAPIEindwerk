@@ -29,31 +29,31 @@
       <div class="ui-g-12 ui-md-4">
           <div class="ui-inputgroup">
               <span class="ui-inputgroup-addon"><i><fa-icon icon="signature"></fa-icon></i></span>
-              <input type="text" pInputText placeholder="Name">         
+              <input type="text" pInputText placeholder="Name" id="name" [(ngModel)]="guitar.name">         
           </div>
       </div>
       
       <div class="ui-g-12 ui-md-4">
           <div class="ui-inputgroup">
               <span class="ui-inputgroup-addon"><i><fa-icon icon="calendar"></fa-icon></i></span>
-              <input type="text" pInputText placeholder="Build Year">   
+              <input type="text" pInputText placeholder="Build Year" id="buildYear" [(ngModel)]="guitar.buildYear">   
           </div>
       </div>
       
       <div class="ui-g-12 ui-md-4">
           <div class="ui-inputgroup">
               <span class="ui-inputgroup-addon"><i><fa-icon icon="image"></fa-icon></i></span>
-              <input type="text" pInputText placeholder="Image link">      
+              <input type="text" pInputText placeholder="Image link" id="imageLink" [(ngModel)]="guitar.image">      
           </div>
       </div>
       
       <div class="ui-g-12 ui-md-4">
           <div class="ui-inputgroup">
               <span class="ui-inputgroup-addon"><i><fa-icon icon="calendar"></fa-icon></i></span>
-              <input type="text" pInputText placeholder="Year of Purchase">      
+              <input type="text" pInputText placeholder="Year of Purchase" id="purchaseYear" [(ngModel)]="guitar.purchaseYear">      
           </div>
       </div>
       
-  </div>
+</div>
   <button pButton (click)="submitForm()" type="button" label="Submit"></button>
 </div>

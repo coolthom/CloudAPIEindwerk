@@ -13,9 +13,11 @@ export class FindGuitarComponent implements OnInit {
   result: Array<Guitar>;
   listVisible: boolean;
   formVisible: boolean;
+  guitar: Guitar;
 
   constructor(private guitarsvc: GuitarService) {
     this.listVisible = false;
+    this.guitar = new Guitar()
    }
 
   ngOnInit() { }
@@ -39,5 +41,9 @@ export class FindGuitarComponent implements OnInit {
   showForm(){
     this.listVisible = false;
     this.formVisible = true;
+  }
+  submitForm(){
+    console.log(this.guitar)
+    this.guitarsvc.postGuitar(this.guitar);
   }
 }
