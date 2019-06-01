@@ -29,11 +29,19 @@ namespace CAEindwerk
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<LibraryContext>(
-                options => options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")
-                )
-            );
+
+        /*services.AddDbContext<LibraryContext>(
+            options => options.UseSqlServer(
+                Configuration.GetConnectionString("DefaultConnection")
+            )
+        );*/
+
+        services.AddDbContext<LibraryContext>(
+          options => options.UseMySQL(
+                Configuration.GetConnectionString("DefaultConnection")
+            )
+          );
+
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 

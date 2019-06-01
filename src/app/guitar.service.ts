@@ -11,6 +11,8 @@ export class GuitarService {
 
   constructor(private http: HttpClient, private authService: AuthService) {
     this.APIURL = "https://localhost:44330/api/guitars";
+    //this.APIURL = "https://cloudapiseindwerk.appspot.com/";
+
    }
    getAllGuitars(page: number){
     return this.http.get<Array<Guitar>>(this.APIURL + "?page=" + page, {

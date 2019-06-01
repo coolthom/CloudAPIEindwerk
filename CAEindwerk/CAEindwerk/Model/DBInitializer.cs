@@ -12,7 +12,8 @@ namespace CAEindwerk.Model
             List<Guitar> guitars = new List<Guitar>();
             context.Database.EnsureCreated();
 
-            if (!context.Guitars.Any())
+            //if (!context.Guitars.Any())
+            if (context.Guitars.ToList().Count() == 0)
             {
                 guitars.Add(new Guitar()
                 {

@@ -1,0 +1,14 @@
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\bin\Release\netcoreapp2.1\CAEindwerk.deps.json
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\bin\Release\netcoreapp2.1\CAEindwerk.runtimeconfig.json
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\bin\Release\netcoreapp2.1\CAEindwerk.runtimeconfig.dev.json
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\bin\Release\netcoreapp2.1\CAEindwerk.dll
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\bin\Release\netcoreapp2.1\CAEindwerk.pdb
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\obj\Release\netcoreapp2.1\CAEindwerk.csprojAssemblyReference.cache
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\obj\Release\netcoreapp2.1\CAEindwerk.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\obj\Release\netcoreapp2.1\CAEindwerk.RazorAssemblyInfo.cache
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\obj\Release\netcoreapp2.1\CAEindwerk.RazorAssemblyInfo.cs
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\obj\Release\netcoreapp2.1\CAEindwerk.AssemblyInfoInputs.cache
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\obj\Release\netcoreapp2.1\CAEindwerk.AssemblyInfo.cs
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\obj\Release\netcoreapp2.1\CAEindwerk.RazorTargetAssemblyInfo.cache
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\obj\Release\netcoreapp2.1\CAEindwerk.dll
+C:\Users\Thomas\Desktop\CloudAPIEindwerk\CAEindwerk\CAEindwerk\obj\Release\netcoreapp2.1\CAEindwerk.pdb
