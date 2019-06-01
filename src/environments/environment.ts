@@ -3,9 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
 
+  auth: {
+    clientID: 'UdqpJeWcCL2NMP8ODvUWKIwMCJrp2DUi',
+    domain: 'coolthom.eu.auth0.com', // e.g., you.auth0.com
+    audience: 'http://localhost:4200/', // e.g., http://localhost:3001 http://localhost:4200/
+    redirect: 'http://localhost:4200/callback',
+    scope: 'openid profile email'
+  }
+};
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

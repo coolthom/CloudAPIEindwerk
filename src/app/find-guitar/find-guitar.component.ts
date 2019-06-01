@@ -11,6 +11,7 @@ export class FindGuitarComponent implements OnInit {
   @ViewChild('guitars') guitars: ElementRef;
 
   result: Array<Guitar>;
+  postedGuitar: Guitar;
   listVisible: boolean;
   formVisible: boolean;
   guitar: Guitar;
@@ -27,7 +28,6 @@ export class FindGuitarComponent implements OnInit {
     this.listVisible = true;
     this.guitarsvc.getAllGuitars(page).subscribe((result) => {
       this.result = result;
-      //console.log(this.result)
     })
   }
   searchSpecificGuitar(){
@@ -35,7 +35,6 @@ export class FindGuitarComponent implements OnInit {
     this.listVisible = true;
     this.guitarsvc.getSpecificGuitar(this.guitarBox.nativeElement.value.replace(" ", "%20")).subscribe((result) => {
       this.result = result;
-      //console.log(this.result)
     })
   }
   showForm(){
@@ -44,6 +43,9 @@ export class FindGuitarComponent implements OnInit {
   }
   submitForm(){
     console.log(this.guitar)
-    this.guitarsvc.postGuitar(this.guitar);
+    this.guitarsvc.postGuitar(this.guitar).subscribe((result) => {
+      this.postedGuitar = result;
+    });
+    console.log(this.postedGuitar)
   }
 }

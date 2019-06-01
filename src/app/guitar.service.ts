@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthService } from './auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,13 @@ import { Observable } from 'rxjs';
 export class GuitarService {
   APIURL: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private authService: AuthService) {
     this.APIURL = "https://localhost:44330/api/guitars";
    }
    getAllGuitars(page: number){
-    return this.http.get<Array<Guitar>>(this.APIURL + "?page=" + page);
+    return this.http.get<Array<Guitar>>(this.APIURL + "?page=" + page, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${this.authService.accessToken}`)
+    });
    }
    getSpecificGuitar(name: string){
      return this.http.get<Array<Guitar>>(this.APIURL + "?name=" + name);
@@ -20,10 +23,12 @@ export class GuitarService {
    postGuitar(guitar: Guitar): Observable<Guitar>{
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-        //'Authorization': 'my-auth-token'
+        'Content-Type':  'application/json',
+        'Authorization': 'Bearer ${this.authService.accessToken}'
       })}
-    return this.http.post<Guitar>(this.APIURL, guitar, httpOptions)
+    return this.http.post<Guitar>(this.APIURL, guitar, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${this.authService.accessToken}`)
+    });
    }
 }
 export class Guitar {

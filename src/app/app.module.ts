@@ -23,6 +23,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core'; 
 import { fas } from '@fortawesome/free-solid-svg-icons'; 
 import { FormsModule } from '@angular/forms';
+import { AuthService } from './auth/auth.service';
+import { CallbackComponent } from './callback/callback.component';
+
 library.add(fas);
 
 
@@ -35,7 +38,8 @@ library.add(fas);
     FindArtistComponent,
     NavComponent,
     HeaderComponent,
-    FindGuitarComponent
+    FindGuitarComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,7 @@ library.add(fas);
     FontAwesomeModule,
     FormsModule
   ],
-  providers: [TabService, ArtistInfoService, GuitarService],
+  providers: [TabService, ArtistInfoService, GuitarService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

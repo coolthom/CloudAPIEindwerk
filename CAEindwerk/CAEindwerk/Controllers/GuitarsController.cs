@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CAEindwerk.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CAEindwerk.Controllers
 {
     [Route("api/guitars")]
+    [Authorize]
     [ApiController]
     public class GuitarsController : ControllerBase
     { 
@@ -88,7 +90,7 @@ namespace CAEindwerk.Controllers
             _context.SaveChanges();
             return NoContent();
         }
-
+        [Authorize]
         [HttpPost]
         public ActionResult<Guitar> AddGuitar([FromBody]Guitar guitar)
         {

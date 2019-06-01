@@ -1,5 +1,7 @@
 <div>
   <button pButton type="button" label="Find Song" routerLink="/findsong" routerLinkActive="active" routerLinkActive="ui-button-success"></button>
   <button pButton type="button" label="Find Artist" routerLink="/findartist" routerLinkActive="active" routerLinkActive="ui-button-success"></button>
-  <button pButton type="button" label="Find Guitar" routerLink="/findguitar" routerLinkActive="active" routerLinkActive="ui-button-success"></button>
+  <button pButton type="button" label="Find Guitar" routerLink="/findguitar" *ngIf="authService.isLoggedIn" routerLinkActive="active" routerLinkActive="ui-button-success"></button>
+  <button pButton type="button" label="Log in" *ngIf="!authService.isLoggedIn" (click)="authService.login()"></button>
+  <button pButton type="button" label="Log out" (click)="authService.logout()" *ngIf="authService.isLoggedIn"></button>
 </div>
